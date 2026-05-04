@@ -1,0 +1,3 @@
+#!/bin/bash
+yum install -y java-11-amazon-corretto
+yum install -y tomcat
