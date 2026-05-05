@@ -20,39 +20,7 @@ This project demonstrates a complete, production-ready CI/CD pipeline for Java w
 ## 🏗️ Architecture
 
 ### High-Level Pipeline Flow
-
-```
-┌─────────────┐
-│  Developer  │
-│   Commits   │
-└──────┬──────┘
-       │
-       ▼
-┌──────────────────────────────────────────────────────┐
-│                  AWS CodePipeline                     │
-├──────────────────────────────────────────────────────┤
-│                                                       │
-│  ┌────────────┐   ┌────────────┐   ┌─────────────┐ │
-│  │   SOURCE   │   │   BUILD    │   │    DEPLOY   │ │
-│  │            │   │            │   │             │ │
-│  │  GitHub    │──▶│ CodeBuild  │──▶│ CodeDeploy  │ │
-│  │  Webhook   │   │  + Maven   │   │  to EC2     │ │
-│  │            │   │  + Tests   │   │             │ │
-│  └────────────┘   └────┬───────┘   └─────────────┘ │
-│                         │                            │
-│                         ▼                            │
-│                  ┌─────────────┐                     │
-│                  │CodeArtifact │                     │
-│                  │  Packages   │                     │
-│                  └─────────────┘                     │
-└──────────────────────────────────────────────────────┘
-                         │
-                         ▼
-                  ┌─────────────┐
-                  │  Live Web   │
-                  │ Application │
-                  └─────────────┘
-```
+![Architecture Diagram](./diagrams/01-architecture-overview.png)
 
 ### Architecture Highlights
 
@@ -528,28 +496,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Ahmed Alasmari**
-- 📧 Email: a7md.buy@gmail.com
-- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-- 🐙 GitHub: [@YOUR-USERNAME](https://github.com/YOUR-USERNAME)
-- 🌐 Portfolio: [yourwebsite.com](https://yourwebsite.com)
+- 💼 LinkedIn: [linkedin.com/in/ahmed-alasmari-sa](https://linkedin.com/in/ahmed-alasmari-sa)
+- 🐙 GitHub: [@AlasmariAhmed](https://github.com/AlasmariAhmed)
 
 ---
 
 ## 🙏 Acknowledgments
 
 - **NextWork** - For the structured learning path and guided project framework
-- **AWS Documentation** - Comprehensive guides for each service
-- **DevOps Community** - Best practices and troubleshooting resources
 
----
 
-## 📌 Project Status
-
-**Status**: ✅ **Complete & Production-Ready**  
-**Last Updated**: January 2024  
-**Maintenance**: Actively maintained  
-
----
 
 ## 🔗 Related Projects
 
@@ -559,14 +515,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-
-### ⭐ If this project helped you learn AWS DevOps, please star it!
-
-**[View Live Demo](#)** | **[Report Bug](https://github.com/YOUR-USERNAME/aws-cicd-pipeline/issues)** | **[Request Feature](https://github.com/YOUR-USERNAME/aws-cicd-pipeline/issues)**
-
-</div>
-
----
 
 **Built with ☁️ on AWS | Automated with ⚙️ DevOps | Documented with 📝 care**

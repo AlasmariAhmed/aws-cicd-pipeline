@@ -1,61 +1,56 @@
-<img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
-
-# Set Up a Web App in the Cloud
-
-**Project Link:** [View Project](http://learn.nextwork.org/projects/aws-devops-vscode)
-
-**Author:** احمد الاسمري  
-**Email:** a7md.buy@gmail.com
 
 ---
 
 ## Set Up a Web App Using AWS and VS Code
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_7a1de541)
+
+![Image](screenshots/aws-devops-vscode_7a1de541.png)
 
 ---
 
 ## Introducing Today's Project!
 
-In this project, I will demonstrate... I'm doing this project to learn...
-
-This project is part one of a series of DevOps projects where I'm building a CI/CD pipeline! I'll be working on the next project in...
-
-I did this project because...
+In this project, I will set up a web application using AWS EC2 and VS Code. This is part one of a 6 Day DevOps Challenge where I'm building a complete CI/CD pipeline.
 
 ### Key tools and concepts
 
-Services I used were... Key concepts I learnt include...
+- **AWS EC2** - Virtual server in the cloud
+- **VS Code** - Integrated Development Environment (IDE)
+- **SSH** - Secure connection to remote servers
+- **Maven** - Build automation tool for Java projects
+- **Java (Amazon Corretto 8)** - Programming language runtime
 
-### Project reflection
-
-This project took me approximately... The most challenging part was... It was most rewarding to...
-
-One thing I didn't expect in this project was...
-
----
 
 ## Launching an EC2 instance
 
 ### What I did in this step
 
-In this step, I will... because...
+I launched an EC2 instance to host my web application in the cloud.
 
-I started this project by launching an EC2 instance because...
+### EC2 Instance Configuration
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_7852fbf3)
+| Setting | Value |
+|---------|-------|
+| Name | `nextwork-devops-` |
+| AMI | Amazon Linux 2023 (kernel-6.1) |
+| Instance Type | t3.micro (free tier eligible) |
+| Key Pair | `nextwork-keypair` (RSA, .pem format) |
+
+
+![Image](screenshots/aws-devops-vscode_7852fbf3.png)
+
 
 ### I also enabled SSH
 
-SSH is... I enabled SSH so that...
-
+I configured SSH traffic to only allow connections from **My IP** address, ensuring only I can access the instance.
 ### Key pairs
 
-A key pair is...
-
+A key pair is like the keys to your virtual computer. It has two parts:
+- **Public key** - Stored by AWS
+- **Private key** - Downloaded to your computer (keep it safe!)
 ### Downloaded key pair file
 
-Once I set up my key pair, AWS automatically downloaded...
+Once I set up my key pair, AWS automatically downloaded the private key file (.pem) to my computer.
 
 ---
 
@@ -63,27 +58,25 @@ Once I set up my key pair, AWS automatically downloaded...
 
 ### What I did in this step
 
-In this step, I will... because...
+I installed VS Code and configured my terminal to connect to the EC2 instance.
 
 ### What is VS Code?
 
-VS Code is...
+VS Code is an Integrated Development Environment (IDE) that helps write and edit code, similar to how Microsoft Word helps write documents.
+.
 
-I installed VS Code to...
+![Image](screenshots/aws-devops-vscode_53d05e68.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_53d05e68)
 
 ---
 
-## My first terminal commands
 
-A terminal is... The first command I ran for this project is...
 
 ### Updating file permissions
 
-I also updated my private key's permissions by...
+I also updated my private key's permissions by running `chmod 400 nextwork-keypair.pem` (Mac/Linux) or `icacls` commands (Windows).
+![Image](screenshots/aws-devops-vscode_9328ada1.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_9328ada1)
 
 ---
 
@@ -91,17 +84,18 @@ I also updated my private key's permissions by...
 
 ### What I did in this step
 
-In this step, I will... because...
+I established an SSH connection from VS Code to my EC2 instance.
+
 
 ### Connecting to EC2
 
-To connect to my EC2 instance, I ran the command...
+To connect to my EC2 instance, I ran the command (ssh -i ~/Desktop/DevOps/nextwork-keypair.pem ec2-user@YOUR-PUBLIC-DNS)
 
 ### This command required an IPv4 address
 
-A server's IPV4 DNS is...
+A Public DNS (Domain Name System) is the public address that the internet uses to find and connect to your EC2 server.
+![Image](screenshots/aws-devops-vscode_e3069dca.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_e3069dca)
 
 ---
 
@@ -109,19 +103,16 @@ A server's IPV4 DNS is...
 
 ### What I did in this step
 
-In this step, I will... because...
+I installed Apache Maven and Amazon Corretto 8 (Java) on the EC2 instance.
+
 
 ### Why I'm using Maven
 
-Apache Maven is...
-
-Maven is required in this project because...
+Apache Maven is a tool that helps build and organize Java projects. It automatically downloads external dependencies and provides templates (archetypes) for different project types.
 
 ### Why I'm using Java
 
-Java is...
-
-Java is required in this project because...
+Maven NEEDS Java to operate. Amazon Corretto 8 is a free, reliable Java distribution provided by AWS.
 
 ---
 
@@ -129,21 +120,21 @@ Java is required in this project because...
 
 ### What I did in this step
 
-In this step, I will... because...
+I used Maven to generate a Java web application from a template.
 
-### Creating the Java web app
 
-I generated a Java web app using the command...
+
 
 ### Installing Remote - SSH
 
-I installed Remote - SSH, which is... I installed it to...
+I installed the Remote-SSH extension to use VS Code's full IDE features on my EC2 instance.
+
 
 ### SSH configuration details
 
-Configuration details required to set up a remote connection include...
+SSH in the terminal only lets you send text commands. Remote-SSH unlocks VS Code's file navigation and code editing directly on the EC2 instance.
+![Image](screenshots/aws-devops-vscode_2939cf01.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_2939cf01)
 
 ---
 
@@ -151,47 +142,35 @@ Configuration details required to set up a remote connection include...
 
 ### Exploring the project structure
 
-Using VS Code's file explorer, I could see...
+I opened the web app folder in VS Code and edited the index.jsp file.
 
-Two of the project folders created by Maven are src and webapp, which...
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_45f91fd7)
+
+![Image](screenshots/aws-devops-vscode_45f91fd7.png)
+
 
 ---
 
 ## Using Remote - SSH
 
-### What I did in this step
 
-In this step, I will... because...
 
 ### Updating the web app
 
-The index.jsp is...
+index.jsp is similar to HTML but can include Java code to generate dynamic content (content that changes based on user input or database data). HTML files are static and cannot include Java code.
 
-I edited index.jsp by...
+![Image](screenshots/aws-devops-vscode_7a1de541.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_7a1de541)
 
 ---
 
-## Using nano
 
-### Additional improvements
-
-In this secret mission, I will... because..
-
-### Terminal vs IDE
-
-An alternative to using IDEs is... To edit index.jsp, I ran the command...
-
-Compared to using an IDE, editing index.jsp in the terminal felt... I'd be more likely to use an IDE if...
 
 ### Verifying my work
 
-To verify my editing work in the terminal, I... It was possible to see my changes in VS Code right away because...
+To verify my editing work in the terminal, I used `cat index.jsp` to display the file contents. It was possible to see my changes in VS Code right away because both the terminal and VS Code are connected to the same EC2 instance via SSH.
+![Image](screenshots/aws-devops-vscode_a3324ad41.png)
 
-![Image](http://learn.nextwork.org/compassionate_indigo_innocent_camel/uploads/aws-devops-vscode_a3324ad41)
 
 ---
 
