@@ -155,7 +155,7 @@ When I built my project again, I saw a BUILD SUCCESS message with a green checkm
 To verify the build, I checked my S3 bucket and found nextwork-devops-cicd-artifact.zip containing the nextwork-web-project.war file. Seeing the artifact tells me the build process successfully compiled, tested, and packaged my application.
 
 
-![Image](screenshots/aws-devops-codebuild-updated_d9cc6191.png)
+![Image](screenshots/aws-devops-codebuild-updated_d9cc61911.png)
 
 
 ---
