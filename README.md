@@ -507,13 +507,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 
-## 🔗 Related Projects
-
-- [AWS 3-Tier Web Application](https://github.com/YOUR-USERNAME/aws-3tier-app) - Multi-AZ web app with VPC
-- [Kubernetes Deployment](https://github.com/YOUR-USERNAME/k8s-deployment) - Container orchestration
-- [Terraform AWS Modules](https://github.com/YOUR-USERNAME/terraform-aws) - Infrastructure as Code
-
----
-
-
-**Built with ☁️ on AWS | Automated with ⚙️ DevOps | Documented with 📝 care**
